@@ -1,0 +1,31 @@
+// ! <tab>
+include ./list-item
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Movies
+        // link <tab>
+        link(rel="stylesheet" href="/style.css") 
+    body 
+        div ประวัติ นักศึกษา
+        div - Name-Username : นาย ธนดล จงรักษ์
+        div - Student ID    : 6302833
+        div - Gmail         : thanadon.j63@rsu.ac.th
+        div ---------------------------------------------------
+        div หนังที่ผมชื่อชอบ
+        div ---------------------------------------------------
+    table 
+        th Id
+        th Title
+        th Year
+        // สำหรับปุ่ม delete
+        th 
+        // สำหรับปุ่ม edit
+        th 
+        - for(let movie of movies)
+          +listItem(movie)
+    a(href="/movie/form") new
+    
