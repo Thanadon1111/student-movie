@@ -3,8 +3,7 @@ const connection = mysql.createConnection({
   host: '127.0.0.1',
   user: 'Stang',
   password: 'Stang0909522288#',
-  database: 'movie-db',
-  port: '3306',
+  database: 'movie-db'
 });
 
 async function getAll() {
