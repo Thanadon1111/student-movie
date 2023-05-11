@@ -1,9 +1,10 @@
 const mysql = require('mysql2');
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: '127.0.0.1',
   user: 'Stang',
   password: 'Stang0909522288#',
   database: 'movie-db',
+  port: '3306',
 });
 
 async function getAll() {
