@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));  // application/x-www-form-url
 app.use('/movie', movieRouter);
 app.get('/', (request, response) => response.redirect('/movie'));
 
-app.listen(8080, () => {
-  console.log('Server is listening to http://localhost:8080');
+app.listen(8000, () => {
+  console.log('Server is listening to http://localhost:8000');
 });
 
