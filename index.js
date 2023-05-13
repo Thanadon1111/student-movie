@@ -1,19 +1,12 @@
-const express = require("express");
+const Student= require('./student/index')
+const express = require('express');
 const morgan = require('morgan');
+const{response,request} = require('express');
+const app = express()
+const port = 3000
 
-const movieRouter = require('./movie');
-
-const app = express();
-
-app.set('view engine', 'pug');
 app.use(express.static('public'))
-app.use(morgan('common', { immediate: true }));
-app.use(express.urlencoded({ extended: false }));  // application/x-www-form-urlencoded
-
-app.use('/movie', movieRouter);
-app.get('/', (request, response) => response.redirect('/movie'));
-
-app.listen(8000, () => {
-  console.log('Server is listening to http://localhost:8000');
-});
-
+app.use(morgan('common',{immediate:true}));
+app.use('/student',Student);
+app.use('/',(request,response)=> response.redirect('/student'));
+app.listen(port,()=> console.log(`Example app listening on port http://localhost:${port}`));
